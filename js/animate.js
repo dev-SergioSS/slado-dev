@@ -42,6 +42,23 @@ if (widthWindow > 1200) {
   let elemBagelAnimate = document.querySelector('.hero__image-bagel_animate')
   let elemBagelFixed = document.querySelector('.hero__image-bagel_fixed')
 
+  gsap.to('.hero__image-bagel_animate', {
+    y: 420,
+    scale: 0.9,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '.hero__image-bagel_animate',
+
+      start: 'top 0%',
+      end: 'top -40%',
+      // markers: true,
+      id: 'bagel',
+      scrub: 1,
+
+      onUpdate: function (self) {},
+    },
+  })
+
   let myScrollHandler = () => {
     let style = window.getComputedStyle(elemBagelAnimate)
     let matrix = new WebKitCSSMatrix(style.transform)
@@ -56,23 +73,6 @@ if (widthWindow > 1200) {
   }
 
   window.addEventListener('scroll', myScrollHandler)
-
-  gsap.to('.hero__image-bagel_animate', {
-    y: 420,
-    scale: 0.9,
-    ease: 'power2.out',
-    scrollTrigger: {
-      trigger: '.hero__image-bagel_animate',
-
-      start: 'top 10%',
-      end: 'top -40%',
-      // markers: true,
-      id: 'bagel',
-      scrub: 1,
-
-      onUpdate: function (self) {},
-    },
-  })
 
   function animateLabels() {
     gsap.fromTo(

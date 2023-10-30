@@ -57,12 +57,11 @@ let sectionProducts = document.querySelector('.products')
 let productsPiece = document.querySelector('.products__piece')
 
 let productSlider = new Swiper('.products__slider', {
-  spaceBetween: -35,
-  slidesPerView: 'auto',
+  spaceBetween: 40,
+  slidesPerView: 2.3,
   loop: true,
   centeredSlides: true,
   allowTouchMove: true,
-  // initialSlide: 1,
 
   navigation: {
     nextEl: '.products__slider-btn-next',
@@ -70,21 +69,20 @@ let productSlider = new Swiper('.products__slider', {
   },
 
   breakpoints: {
-    768: {
-      // allowTouchMove: false,
-      slidesPerView: 6,
+    480: {
+      slidesPerView: 3,
+    },
+    720: {
+      slidesPerView: 4.2,
       spaceBetween: 60,
     },
-    // 998: {
-    //   slidesPerView: 6,
-    // },
+    768: {
+      allowTouchMove: false,
+      slidesPerView: 6,
+    },
   },
 
   on: {
-    // init: function () {
-    //   let activeSlide = this.slides[this.activeIndex]
-    //   if (activeSlide) setCurrentProduct(activeSlide)
-    // },
     slideChange: function () {
       let activeSlide = this.slides[this.activeIndex]
       if (activeSlide) setCurrentProduct(activeSlide)
