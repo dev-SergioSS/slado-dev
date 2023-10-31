@@ -166,8 +166,7 @@ main {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
-  border: 1px solid #000;
+  z-index: 200;
 }
 
 .header.hide-menu {
@@ -814,12 +813,14 @@ main {
   transition: all 0.4s ease 0s;
   position: relative;
   opacity: 0;
+  pointer-events: none;
   padding: 300px 0;
 }
 
 .product.swiper-slide-active {
   opacity: 1;
   transition: all 0.3s ease 0.2s;
+  pointer-events: all;
 }
 
 .product.swiper-slide-active .product__pack {
@@ -867,7 +868,6 @@ main {
   max-width: 350px;
   min-height: 300px;
   transition: none;
-  bottom: 0;
 }
 
 .product__title {
@@ -879,6 +879,20 @@ main {
 .product__pack {
   width: 100%;
   transition: all 0.4s ease 0s;
+  position: relative;
+}
+
+.product__pack::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transform: translate(12%, 38%) scale(1.4);
+          transform: translate(12%, 38%) scale(1.4);
+  width: 100%;
+  height: 38px;
+  background: url("../img/food-and-bg/pack-shadow.png") center/contain no-repeat;
+  z-index: -1;
 }
 
 .product__pack img {
@@ -907,6 +921,7 @@ main {
   min-width: 284px;
   align-self: start;
   color: var(--productColor);
+  cursor: pointer;
 }
 
 .button_white {
@@ -2229,6 +2244,16 @@ textarea {
   }
 }
 
+@media (min-width: 1540px) {
+  .product.swiper-slide-active .product__content {
+    left: -440px;
+  }
+
+  .products__slider {
+    margin-right: 20vw;
+  }
+}
+
 @media (min-width: 1900px) {
   .ordering {
     margin-top: -650px;
@@ -2254,6 +2279,7 @@ textarea {
   }
 
   .product__content {
+    bottom: 0;
     scale: 0.8;
   }
 }
@@ -2302,6 +2328,10 @@ textarea {
     min-width: 150px;
   }
 
+  .product.swiper-slide-active .product__content {
+    left: -370px;
+  }
+
   .products__circle {
     width: 1200px;
   }
@@ -2335,7 +2365,7 @@ textarea {
   }
 
   .product.swiper-slide-active .product__content {
-    left: -350px;
+    left: -355px;
   }
 
   .hero {
@@ -2546,7 +2576,7 @@ textarea {
     background-color: #fff;
     border-radius: 22px 0 0 22px;
     box-shadow: 0px 2.31px 2.31px 0px rgba(0, 0, 0, 0.21);
-    top: 58px;
+    top: 63px;
     right: -100%;
     transition: all 0.3s ease 0s;
   }
@@ -3020,11 +3050,11 @@ textarea {
 
 @media (max-width: 768px) {
   body::-webkit-scrollbar {
-    width: 5px;
+    width: auto;
   }
 
   body.lock {
-    padding-right: 5px;
+    padding-right: 0;
   }
 
   .container {
@@ -3214,6 +3244,11 @@ textarea {
   .product__title {
     width: 140%;
     font-size: 17px;
+  }
+
+  .product__pack::before {
+    -webkit-transform: translate(12%, 40%) scale(1.4);
+            transform: translate(12%, 40%) scale(1.4);
   }
 
   .product__pack {
@@ -3431,6 +3466,7 @@ textarea {
 
   .products__slider-nav {
     padding: 0;
+    bottom: 50px;
   }
 
   .products .products__slider-btn {
