@@ -342,7 +342,7 @@ main {
   display: none;
   flex-direction: column;
   align-items: center;
-  padding: 44px 11px 11px;
+  padding: 50px 11px 11px;
   gap: 18px;
   z-index: 1;
   border-radius: 22px;
@@ -2257,6 +2257,12 @@ textarea {
 @media (min-width: 1900px) {
   .ordering {
     margin-top: -650px;
+  }
+}
+
+@media (max-width: 1380px) {
+  .product.swiper-slide-active .product__content {
+    left: -445px;
   }
 }
 
