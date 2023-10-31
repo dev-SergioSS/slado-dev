@@ -4,7 +4,6 @@ const btnMenu = document.querySelector('.header__btn-menu')
 const menu = document.querySelector('.menu')
 const menuLink = document.querySelectorAll('.menu__link')
 const header = document.querySelector('.header')
-const body = document.querySelector('body')
 
 if (btnMenu != null) {
   btnMenu.addEventListener('click', function () {
@@ -36,9 +35,9 @@ for (link of menuLink) {
 
 //-- lang
 
-const btnLang = document.querySelector('.menu__item-lang')
-const listLang = document.querySelector('.menu__item-lang>div')
-btnLang.addEventListener('click', () => listLang.classList.toggle('open'))
+const itemLang = document.querySelector('.lang')
+const listLang = document.querySelector('.lang__list')
+itemLang.addEventListener('click', () => itemLang.classList.toggle('open'))
 
 // -- textarea
 
@@ -51,43 +50,4 @@ document.addEventListener('DOMContentLoaded', function () {
         this.scrollHeight + (this.offsetHeight - this.clientHeight) + 'px'
     })
   })
-})
-
-// -- preloader
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   // var progressBar = document.getElementById('progressBar')
-//   // var percent = document.getElementById('percent')
-//   var preloader = document.querySelector('.preloader')
-
-//   window.addEventListener('load', function () {
-//     preloader.style.display = 'none'
-//   })
-
-//   var totalLoadResources = 10 // Загальна кількість ресурсів, які слід завантажити
-
-//   function updateProgressBar(currentLoad) {
-//     var progress = (currentLoad / totalLoadResources) * 100
-//     progressBar.style.width = progress + '%'
-//     percent.innerText = Math.round(progress) + '%'
-//   }
-
-//   // Симулюємо завантаження ресурсів
-//   var currentLoadedResources = 0
-//   var interval = setInterval(function () {
-//     currentLoadedResources++
-//     updateProgressBar(currentLoadedResources)
-
-//     if (currentLoadedResources === totalLoadResources) {
-//       clearInterval(interval)
-//     }
-//   }, 1000)
-// })
-
-window.addEventListener('load', function () {
-  const preloader = document.querySelector('.preloader')
-  const wrapper = document.querySelector('.wrapper')
-  preloader.style.display = 'none'
-  wrapper.style.display = 'flex'
-  body.classList.remove('lock')
 })

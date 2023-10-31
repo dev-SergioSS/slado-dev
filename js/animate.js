@@ -1,6 +1,8 @@
 gsap.registerPlugin(ScrollTrigger)
 let widthWindow = document.body.clientWidth
 
+let bagelTranslateY = 420
+
 // -- secret__slides
 if (widthWindow < 768) {
   gsap.from('.secret__slide div', {
@@ -43,7 +45,7 @@ if (widthWindow > 1200) {
   let elemBagelFixed = document.querySelector('.hero__image-bagel_fixed')
 
   gsap.to('.hero__image-bagel_animate', {
-    y: 420,
+    y: bagelTranslateY,
     scale: 0.9,
     ease: 'power2.out',
     scrollTrigger: {
@@ -64,7 +66,7 @@ if (widthWindow > 1200) {
     let matrix = new WebKitCSSMatrix(style.transform)
     let translateY = matrix.m42
 
-    if (translateY >= 410) {
+    if (translateY >= bagelTranslateY - 10) {
       window.removeEventListener('scroll', myScrollHandler)
       elemBagelAnimate.style.display = 'none'
       elemBagelFixed.style.display = 'block'

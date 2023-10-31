@@ -1,21 +1,5 @@
 // -- sliders
 
-// let secretSlider = new Swiper('.secret__slider', {
-//   direction: 'vertical',
-//   spaceBetween: 30,
-//   slidesPerView: 'auto',
-
-//   mousewheel: true,
-//   freeMode: true,
-//   releaseOnEdges: true,
-
-//   breakpoints: {
-//     576: {
-//       spaceBetween: 80,
-//     },
-//   },
-// })
-
 let processSlider = new Swiper('.process__slider', {
   slidesPerView: 'auto',
   centeredSlides: true,
@@ -40,7 +24,6 @@ let partnersSlider = new Swiper('.partners__slider', {
   spaceBetween: 30,
   speed: 6000,
   loop: true,
-  // loopAdditionalSlides: 10,
   autoplay: {
     delay: 1,
   },
@@ -62,6 +45,8 @@ let productSlider = new Swiper('.products__slider', {
   loop: true,
   centeredSlides: true,
   allowTouchMove: true,
+
+  loopAdditionalSlides: 4,
 
   navigation: {
     nextEl: '.products__slider-btn-next',
@@ -113,8 +98,6 @@ let popupProductSlider = new Swiper('.popup-products__slider', {
   initialSlide: 1,
 
   navigation: {
-    // nextEl: '.popup-products__slider-btn-next',
-    // prevEl: '.popup-products__slider-btn-prev',
     nextEl: '.products__slider-btn-next',
     prevEl: '.products__slider-btn-prev',
   },
@@ -124,10 +107,6 @@ let popupProductSlider = new Swiper('.popup-products__slider', {
   },
 
   on: {
-    // init: function () {
-    //   let activeSlide = this.slides[this.activeIndex]
-    //   if (activeSlide) setCurrentProduct(activeSlide)
-    // },
     slideChange: function () {
       let activeSlide = this.slides[this.activeIndex]
       if (activeSlide) setCurrentPopupProduct(activeSlide)
@@ -145,9 +124,6 @@ function setCurrentPopupProduct(activeSlide) {
     productsPieces.classList.remove('animated')
   }, 400)
 }
-
-// productSlider.controller.control = popupProductSlider
-// popupProductSlider.controller.control = productSlider
 
 let btnPopupNext = document.querySelector('.popup-products__slider-btn-next')
 let btnPopupPrev = document.querySelector('.popup-products__slider-btn-prev')

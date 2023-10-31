@@ -5,6 +5,9 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preload" href="fonts/CalibriBold.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="css/preloader.css" />
+	<script src="js/preloader.js"></script>
 	<link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/style.css" />
 	<title>Slado</title>
@@ -12,7 +15,17 @@
 
 
 <body class="lock">
-	<div class="wrapper">
+	<div class="preloader">
+		<div class="preloader__text">
+			<span>ПРОСТЕ </span>
+			<span>стає</span>
+			<span>ідеальним</span>
+		</div>
+		<div class="preloader__progress">
+			<div class="preloader__progress-color"></div>
+		</div>
+	</div>
+	<div class="wrapper hidden">
 		<header class="header">
 	<div class="container">
 		<div class="header__row">
@@ -27,13 +40,12 @@
 					<li class="menu__item-title">меню</li>
 
 					<li class="menu__item-btn">
-						<div class="menu__item-lang">
-							<button class="button_white-sm">ENG</button>
-							<div>
-								<a href="##">ua</a>
-								<a href="##">pl</a>
-								<a href="##">de</a>
-								<a href="##">en</a>
+						<div class="lang button_white-sm">
+							<span class="lang__current lang__item">ENG</span>
+							<div class="lang__list">
+								<a class="lang__item" href="##">ua</a>
+								<a class="lang__item" href="##">pl</a>
+								<a class="lang__item" href="##">de</a>
 							</div>
 						</div>
 					</li>
@@ -85,15 +97,20 @@
 							<span>ідеальним</span>
 
 						</h1>
-						<div class="hero__image">
-							<img class="hero__image_desktop" src="img/food-and-bg/hero-food.png" alt="food">
-							<img class="hero__image_mobile" src="img/food-and-bg/hero-food-mobile.png" alt="food">
-						</div>
-						<div class="hero__image-bagel hero__image-bagel_animate">
-							<img src="img/food-and-bg/hero-food-one.png" alt="bagel">
-						</div>
-						<div class="hero__image-bagel hero__image-bagel_fixed">
-							<img src="img/food-and-bg/hero-food-one.png" alt="bagel">
+						<div class="hero__images">
+							<div class="hero__image layer-1">
+								<img class="hero__image_desktop" src="img/food-and-bg/hero-food_layer-1.png" alt="food">
+								<img class="hero__image_mobile" src="img/food-and-bg/hero-food-mobile.png" alt="food">
+							</div>
+							<div class="hero__image-bagel layer-2 hero__image-bagel_animate hero__image_desktop">
+								<img src="img/food-and-bg/hero-food-one.png" alt="bagel">
+							</div>
+							<div class="hero__image layer-3 hero__image_desktop">
+								<img class="hero__image_desktop" src="img/food-and-bg/hero-food_layer-3.png" alt="food">
+							</div>
+							<div class="hero__image-bagel hero__image-bagel_fixed hero__image_desktop">
+								<img src="img/food-and-bg/hero-food-one.png" alt="bagel">
+							</div>
 						</div>
 						<div class="hero__badges">
 							<div class="hero__badge hero__badge_1">
@@ -222,7 +239,7 @@
 					<div class="products__label"></div>
 					<div class="products__piece"></div>
 					<div class="products__btn-popup">
-						<a href="#popup-products" class=" popup-link button_white">детальніше</a>
+						<a href="#popup-products" class="popup-link button_white">детальніше</a>
 					</div>
 
 					<div class="products__slider">
@@ -235,7 +252,8 @@
 								<div class="product__content">
 									<img src="img/product/bites/logo.png" class="product__logo_white" />
 									<div class="product__title">ЗДОБНI ЗАВАРНI «СМАКУЛЬКИ»</div>
-									<a href="#popup-products" class="product__btn-popup popup-link button_white">детальніше</a>
+									<a href="#popup-products" class="product__btn-popup popup-link button_white"
+										style="color: #814594">детальніше</a>
 								</div>
 								<div class="product__logo_dark">
 									<img src="img/product/bites/logo-dark.png" />
@@ -269,6 +287,7 @@
 									<img src="img/product/snaps/logo-dark.png" />
 								</div>
 							</div>
+
 
 						</div>
 						<div class="products__slider-nav">
@@ -606,22 +625,6 @@
 		</div>
 	</div>
 </footer>
-	</div>
-
-	<div class="preloader">
-		<!-- <div class="progress-container">
-			loader
-			<div class="progress-bar" id="progressBar"></div>
-			<div class="percent" id="percent">0%</div>
-		</div> -->
-		<div class="preloader__text">
-			<span>ПРОСТЕ </span>
-			<span>стає</span>
-			<span>ідеальним</span>
-		</div>
-		<div class="preloader__progress">
-			<div class="preloader__progress-color"></div>
-		</div>
 	</div>
 
 	<div id="popup-thanks" class="popup">
