@@ -66,6 +66,10 @@ let productSlider = new Swiper('.products__slider', {
       allowTouchMove: false,
       slidesPerView: 6,
     },
+    1600: {
+      slidesPerView: 6,
+      spaceBetween: 100,
+    },
   },
 
   on: {
