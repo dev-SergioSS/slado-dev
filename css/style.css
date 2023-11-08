@@ -661,6 +661,10 @@ main {
   height: 100px;
 }
 
+.popup-products .popup__btn-close .mobile-icon {
+  display: none;
+}
+
 .popup-products__slider-nav {
   padding: 0 !important;
   margin-left: -80px;
@@ -1365,8 +1369,8 @@ textarea {
   top: 160px;
   width: 295px;
   height: 190px;
-  -webkit-mask-image: url("../img/product/label.png");
-  mask-image: url("../img/product/label.png");
+  -webkit-mask-image: url("../img/product/label.svg");
+  mask-image: url("../img/product/label.svg");
   mask-mode: alpha;
   background-color: var(--productColor);
   transition: all 0.3s ease 0s;
@@ -1379,7 +1383,7 @@ textarea {
   position: absolute;
   left: 0;
   top: 0;
-  background: url("../img/product/label-text.png") center/contain no-repeat;
+  background: url("../img/product/label-text.svg") center/contain no-repeat;
 }
 
 .products__piece {
@@ -1936,9 +1940,12 @@ textarea {
           transform: translateX(-50%) translateY(-60%);
   width: 82px;
   height: 82px;
-  background: url("../img/other-products/bg-circle.svg") center/contain no-repeat;
   z-index: -1;
   transition: all 0.6s ease 0s;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-filter: blur(39.5px);
+          filter: blur(39.5px);
 }
 
 .other-products__product:hover::before {
@@ -1980,12 +1987,12 @@ textarea {
 }
 
 .footer {
-  padding: 260px 0 50px;
+  padding: 460px 0 50px;
   background: url("../img/footer/bg-footer.png") center 100%/cover no-repeat;
   overflow: hidden;
   position: relative;
   z-index: 4;
-  margin-top: -150px;
+  margin-top: -350px;
 }
 
 .footer__wrap {
@@ -2464,6 +2471,7 @@ textarea {
 @media (max-width: 1100px) {
   .feedback {
     background-size: 355px auto;
+    background-position: 100% calc(100% - 80px);
   }
 
   .other-products__product {
@@ -2511,6 +2519,26 @@ textarea {
     position: fixed;
     top: -20px;
     overflow: hidden;
+  }
+
+  .header.float::before {
+    display: block;
+  }
+
+  .header::before {
+    background: url("../img/food-and-bg/bg-menu.png") center 0/cover no-repeat;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+    z-index: -1;
+    display: none;
   }
 
   .header__row {
@@ -2908,7 +2936,7 @@ textarea {
   }
 
   .feedback {
-    background-position: calc(100% + 100px) calc(100% - 150px);
+    background-position: calc(100% + 100px) calc(100% - 80px);
   }
 
   .feedback #form-1 {
@@ -3156,6 +3184,16 @@ textarea {
     background-image: url("../img/food-and-bg/popup-prod-decor-mob.png");
   }
 
+  .popup-products .popup__btn-close .desctop-icon {
+    display: none;
+  }
+
+  .popup-products .popup__btn-close .mobile-icon {
+    display: block;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
   .popup-products__slider-nav {
     top: 110px;
     padding: 0 7px !important;
@@ -3293,6 +3331,14 @@ textarea {
     display: block;
   }
 
+  .hero {
+    padding-bottom: 15px;
+  }
+
+  .hero__title {
+    margin-bottom: 20px;
+  }
+
   .hero__badge {
     border: 2px solid #F5D38C;
     padding: 5px 10px;
@@ -3309,7 +3355,7 @@ textarea {
     font-size: 5px;
     left: auto;
     top: 166px;
-    right: 35px;
+    right: 55px;
   }
 
   .hero__badge_2 {
@@ -3332,7 +3378,7 @@ textarea {
     height: 69px;
     right: auto;
     left: 20px;
-    top: 204px;
+    top: 244px;
   }
 
   .hero__badge_3 img {
@@ -3703,7 +3749,7 @@ textarea {
   .footer {
     margin-top: 0;
     padding-top: 0;
-    background: url("../img/footer/bg-footer-mobile.png") center 100%/contain no-repeat;
+    background: url("../img/footer/bg-footer-mobile.png") center 100%/cover no-repeat;
   }
 
   .footer__contacts {
@@ -3850,8 +3896,8 @@ textarea {
   }
 
   .hero__badge_2 {
-    bottom: -48px;
-    right: 42px;
+    bottom: -58px;
+    right: 62px;
   }
 
   .solution__items li {

@@ -79,14 +79,17 @@
   .preloader__text {
     font-size: 48px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
   .preloader__text {
-    flex-direction: column;
     gap: 20px;
     margin-bottom: 100px;
+    max-width: 400px;
+    font-size: 44px;
   }
 }
 

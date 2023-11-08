@@ -38,6 +38,7 @@ let partnersSlider = new Swiper('.partners__slider', {
 
 let sectionProducts = document.querySelector('.products')
 let productsPiece = document.querySelector('.products__piece')
+let btnColorPopup = document.querySelector('.products__btn-color')
 
 let productSlider = new Swiper('.products__slider', {
   spaceBetween: 40,
@@ -76,9 +77,10 @@ let productSlider = new Swiper('.products__slider', {
 })
 
 function setCurrentProduct(activeSlide) {
-  let { color, folder } = activeSlide.dataset
+  let { color, btnColor, folder } = activeSlide.dataset
   sectionProducts.style.setProperty('--productColor', color)
   productsPiece.style.backgroundImage = `url(../img/product/${folder}/piece.png)`
+  btnColorPopup.style.color = btnColor
 
   productsPiece.classList.add('animated')
   setTimeout(function () {

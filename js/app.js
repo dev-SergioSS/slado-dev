@@ -51,3 +51,14 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 })
+
+// -- float header
+
+let scrolledPixels = 0
+
+document.addEventListener('scroll', (e) => {
+  scrolledPixels = window.scrollY
+
+  if (scrolledPixels > 0) header.classList.add('float')
+  else header.classList.remove('float')
+})
