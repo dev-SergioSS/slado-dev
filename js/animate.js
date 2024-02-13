@@ -71,6 +71,8 @@ if (widthWindow > 1200) {
       elemBagelAnimate.style.display = 'none'
       elemBagelFixed.style.display = 'block'
       animateLabels()
+
+      console.log(111)
     }
   }
 
@@ -111,6 +113,18 @@ if (widthWindow > 1200) {
       duration: 0.4,
     })
   }
+}
+
+if (widthWindow > 576) {
+  gsap.to('.hero__image-bagel_top-fixed', {
+    scrollTrigger: {
+      trigger: '.new-trend',
+      start: 'top 10%',
+    },
+
+    opacity: 1,
+    duration: 0.2,
+  })
 }
 
 gsap.from('.solution__items li', {
@@ -341,6 +355,26 @@ gsap.to('.piece-feedback-4', {
     scale: 0.9,
   },
 })
+gsap.to('.piece-feedback-5', {
+  y: -40,
+  ease: 'power1.out',
+  scrollTrigger: {
+    trigger: '.piece-feedback-2',
+    start: 'top 80%',
+    end: 'top 0%',
+    scrub: 1,
+  },
+})
+gsap.to('.piece-feedback-6', {
+  y: -30,
+  ease: 'power1.out',
+  scrollTrigger: {
+    trigger: '.piece-feedback-3',
+    start: 'top 80%',
+    end: 'top 0%',
+    scrub: 1,
+  },
+})
 
 gsap.from('.piece-process-1', {
   rotation: 30,
@@ -401,14 +435,38 @@ gsap.to('.piece-secret-3', {
   },
 })
 
-gsap.to('.presentation__icon', {
-  y: -20,
-  ease: 'power1.out',
+gsap.to('.piece-order-box-1', {
+  y: -40,
+  rotation: 10,
   scale: 0.95,
+  ease: 'power1.out',
   scrollTrigger: {
-    trigger: '.presentation__icon',
-    start: 'top center',
+    trigger: '.piece-order-box-1',
+    start: 'top 80%',
     end: 'top 0%',
     scrub: 1,
   },
 })
+gsap.to('.piece-order-box-2', {
+  y: -20,
+  rotation: -40,
+  ease: 'power1.out',
+  scrollTrigger: {
+    trigger: '.piece-order-box-2',
+    start: 'top 80%',
+    end: 'top 0%',
+    scrub: 1,
+  },
+})
+
+// gsap.to('.presentation__icon', {
+//   y: -20,
+//   ease: 'power1.out',
+//   scale: 0.95,
+//   scrollTrigger: {
+//     trigger: '.presentation__icon',
+//     start: 'top center',
+//     end: 'top 0%',
+//     scrub: 1,
+//   },
+// })

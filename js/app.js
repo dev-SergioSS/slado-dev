@@ -1,3 +1,9 @@
+// Отримати ширину та висоту вікна браузера
+var windowWidth =
+  window.innerWidth ||
+  document.documentElement.clientWidth ||
+  document.body.clientWidth
+
 // -- mobileMenu
 
 const btnMenu = document.querySelector('.header__btn-menu')
@@ -62,3 +68,22 @@ document.addEventListener('scroll', (e) => {
   if (scrolledPixels > 0) header.classList.add('float')
   else header.classList.remove('float')
 })
+
+// -- secret slicky position
+
+if (windowWidth > 768) {
+  const windowHeight =
+    window.innerHeight ||
+    document.documentElement.clientHeight ||
+    document.body.clientHeight
+
+  const secretText = document.querySelector('.secret__text')
+  const secretTextHeight = secretText.offsetHeight
+  let secretPaddingY = (windowHeight - secretTextHeight) / 2
+
+  if (secretPaddingY < 0) secretPaddingY = 100
+
+  secretText.style.top = secretPaddingY + 'px'
+}
+
+console.log(windowWidth)

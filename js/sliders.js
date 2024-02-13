@@ -18,24 +18,6 @@ let processSlider = new Swiper('.process__slider', {
   },
 })
 
-let partnersSlider = new Swiper('.partners__slider', {
-  slidesPerView: 'auto',
-  centeredSlides: true,
-  spaceBetween: 30,
-  speed: 5000,
-  loop: true,
-  autoplay: {
-    delay: 1,
-  },
-  allowTouchMove: false,
-
-  breakpoints: {
-    576: {
-      spaceBetween: 46,
-    },
-  },
-})
-
 // ------- popup products
 
 let popupProducts = document.querySelector('#popup-products')

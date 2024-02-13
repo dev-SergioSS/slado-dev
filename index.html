@@ -1,3 +1,9 @@
+<?php
+$date = strtotime("now");
+$company_id = "%application_id%";
+$signature = hash('sha512', join('|',array('%your_company_private_key%', $company_id, $date)));
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +14,6 @@
 	<link rel="preload" href="fonts/CalibriBold.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="stylesheet" href="css/preloader.css" />
 	<script src="js/preloader.js"></script>
-	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" /> -->
 	<link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/style.css" />
 	<title>Slado</title>
@@ -102,6 +107,9 @@
 							<div class="hero__image layer-1">
 								<img class="hero__image_desktop" src="img/food-and-bg/hero-food_layer-1.png" alt="food">
 								<img class="hero__image_mobile" src="img/food-and-bg/hero-food-mobile.png" alt="food">
+							</div>
+							<div class="hero__image-bagel layer-2 hero__image-bagel_top-fixed  hero__image_desktop">
+								<img src="img/food-and-bg/hero-food-one.png" alt="bagel">
 							</div>
 							<div class="hero__image-bagel layer-2 hero__image-bagel_animate hero__image_desktop">
 								<img src="img/food-and-bg/hero-food-one.png" alt="bagel">
@@ -311,19 +319,25 @@
 			</section>
 
 			<section class="secret-and-pdf">
+
 				<div class="presentation">
 					<div class="container">
 						<div class="presentation__wrap">
 							<div class="presentation__body">
-								<div class="presentation__title">Презентація
-									<span>компанії</span>
+								<div class="presentation__left">
+									<div class="presentation__title">наша Презентація</div>
+									<a href="##" class="presentation__btn button_red">завантажити зараз</a>
 								</div>
-								<img src="img/icons/pdf.png" alt="icon pdf" class="presentation__icon"></img>
-								<a href="##" class="presentation__btn button_red">завантажити pdf</a>
+								<div class="presentation__img">
+									<img src="img/presentation/presentation-mobile.png" alt="presentation"
+										class="presentation__img_mobile">
+									<img src="img/presentation/presentation.png" alt="presentation" class="presentation__img_desctop">
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
 				<div class="secret">
 					<div id="secret"></div>
 					<div class="container">
@@ -437,78 +451,65 @@
 							<p>Ми завжди відкриті до діалогу,
 								швидко приймаємо рішення і готові
 								до будь-якого формату роботи!</p>
-							<a href="#popup-feedback" class="partners__btn button_brown popup-link">Стати партнером</a>
+							<a href="#popup-feedback" class="partners__btn button_red popup-link">Стати партнером</a>
 						</div>
-						<img class="partners__img" src="img/partners/delivery-man.png" alt="delivery man">
-					</div>
-				</div>
-				<div class="partners__slider">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide partners__slide">
-							<div class="partners__slide-icon">
-								<img src="img/partners/icon-1.svg" alt="довіра, прозорість	та позитивна комунікація">
-							</div>
-							<h4 class="partners__slide-text">довіра, прозорість
-								та позитивна
-								комунікація</h4>
-						</div>
-						<div class="swiper-slide partners__slide">
-							<div class="partners__slide-icon">
-								<img src="img/partners/icon-2.svg" alt="маркетингова	та digital підтримка">
-							</div>
-							<h4 class="partners__slide-text">маркетингова <br>
-								та digital <br>
-								підтримка </h4>
-						</div>
-						<div class="swiper-slide partners__slide">
-							<div class="partners__slide-icon">
-								<img src="img/partners/icon-3.svg" alt="власна логістика та швидка доставка">
-							</div>
-							<h4 class="partners__slide-text">власна логістика
-								та швидка
-								доставка</h4>
-						</div>
-						<div class="swiper-slide partners__slide">
-							<div class="partners__slide-icon">
-								<img src="img/partners/icon-4.svg" alt="власний креативний R&D відділ">
-							</div>
-							<h4 class="partners__slide-text">власний
-								креативний <br>
-								R&D відділ</h4>
-						</div>
-						<div class="swiper-slide partners__slide">
-							<div class="partners__slide-icon">
-								<img src="img/partners/icon-5.svg" alt="високий об’єм виробництва ТА постійний асортимент">
-							</div>
-							<h4 class="partners__slide-text">високий об’єм
-								виробництва <br>
-								ТА постійний
-								асортимент</h4>
+						<div class="partners__img">
+							<img src="img/partners/delivery-man.png" alt="delivery man">
 						</div>
 
-
 					</div>
+					<ul class="partners__benefits">
+						<li>
+							<img src="img/partners/icon-1.svg" alt="icon">
+							<p>довіра, прозорість та позитивна комунікація</p>
+						</li>
+						<li>
+							<img src="img/partners/icon-2.svg" alt="icon">
+							<p>власна логістика,
+								швидка доставка</p>
+						</li>
+						<li>
+							<img src="img/partners/icon-3.svg" alt="icon">
+							<p>власна логістика,
+								швидка доставка</p>
+						</li>
+						<li>
+							<img src="img/partners/icon-4.svg" alt="icon">
+							<p>власний креативний
+								R&D відділ</p>
+						</li>
+						<li>
+							<img src="img/partners/icon-5.svg" alt="icon">
+							<p>маркетингова та
+								digital підтримка </p>
+						</li>
+					</ul>
 				</div>
 			</section>
 
-			<section class="ordering">
+			<section class="order-box">
 				<div class="container">
-					<div class="ordering__wrap">
-						<div class="ordering__info">
-							<h2>скуштуй
-								<span>всі смаки</span>
-							</h2>
-							<p>та обери свого фаворита</p>
-							<a href="#popup-box" class="button_red popup-link">замовити семпл бокс</a>
-						</div>
-						<div class="ordering__img">
-							<img src="img/food-and-bg/box-food.png" alt="скуштуй всі смаки">
+					<div class="order-box__wrap">
+						<div class="order-box__content">
+							<h2 class="order-box__title">наш продукт для<span>вашого магазину</span> </h2>
+
+							<div class="order-box__img">
+								<img class="order-box__img_mob" src="img/order-box/box-mobile.png" alt="скуштуй всі смаки">
+								<img class="order-box__img_desc" src="img/order-box/box.png" alt="скуштуй всі смаки">
+							</div>
+
+							<a href="#popup-box" class="order-box__btn button_red popup-link">замовити семпл бокс</a>
 						</div>
 					</div>
+				</div>
+				<div class="pieces">
+					<div class="piece piece-order-box-1"><img src="img/pieces/order-box-1.png" alt="piece"></div>
+					<div class="piece piece-order-box-2"><img src="img/pieces/order-box-2.png" alt="piece"></div>
 				</div>
 			</section>
 
 			<section class="feedback">
+
 				<div id="form-1"></div>
 				<div class="container">
 					<div class="feedback__wrap">
@@ -539,11 +540,16 @@
 						<div class="feedback__poster"></div>
 					</div>
 				</div>
-				<div class="pieces">
-					<div class="piece piece-feedback-1"><img src="img/pieces/feedback-1.png" alt="piece"></div>
-					<div class="piece piece-feedback-2"><img src="img/pieces/feedback-2.png" alt="piece"></div>
-					<div class="piece piece-feedback-3"><img src="img/pieces/feedback-3.png" alt="piece"></div>
-					<div class="piece piece-feedback-4"><img src="img/pieces/feedback-4.png" alt="piece"></div>
+				<div class="feedback__piece-relative">
+					<div class="pieces">
+						<div class="piece piece-feedback-1"><img src="img/pieces/feedback-1.png" alt="piece"></div>
+						<div class="piece piece-feedback-2"><img src="img/pieces/feedback-2.png" alt="piece"></div>
+						<div class="piece piece-feedback-3"><img src="img/pieces/feedback-3.png" alt="piece"></div>
+						<div class="piece piece-feedback-4"><img src="img/pieces/feedback-4.png" alt="piece"></div>
+
+						<div class="piece piece-feedback-5"><img src="img/pieces/feedback-2_full.png" alt="piece"></div>
+						<div class="piece piece-feedback-6"><img src="img/pieces/feedback-3_full.png" alt="piece"></div>
+					</div>
 				</div>
 			</section>
 
@@ -588,7 +594,6 @@
 				</div>
 			</section>
 		</main>
-
 
 		<footer class="footer">
 	<div id="footer"></div>
