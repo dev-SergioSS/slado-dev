@@ -86,4 +86,27 @@ if (windowWidth > 768) {
   secretText.style.top = secretPaddingY + 'px'
 }
 
-console.log(windowWidth)
+// -- partners
+
+const partnersTextBlock = document.querySelector('.partners__text')
+const partnersBenefits = document.querySelector('.partners__benefits')
+
+window.addEventListener('resize', () => {
+  let currentWindowWidth =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth
+
+  if (
+    currentWindowWidth > 1200 &&
+    !partnersTextBlock.contains(partnersBenefits)
+  ) {
+    partnersTextBlock.appendChild(partnersBenefits)
+    console.log(1)
+  }
+})
+
+// init
+if (windowWidth > 1200) {
+  partnersTextBlock.appendChild(partnersBenefits)
+}

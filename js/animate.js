@@ -71,8 +71,6 @@ if (widthWindow > 1200) {
       elemBagelAnimate.style.display = 'none'
       elemBagelFixed.style.display = 'block'
       animateLabels()
-
-      console.log(111)
     }
   }
 
