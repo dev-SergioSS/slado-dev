@@ -2,6 +2,7 @@ gsap.registerPlugin(ScrollTrigger)
 let widthWindow = document.body.clientWidth
 
 let bagelTranslateY = 420
+let labelsScaleX = 1
 
 // -- secret__slides
 if (widthWindow < 768) {
@@ -40,7 +41,20 @@ if (widthWindow < 768) {
   })
 }
 // -- bagels
-if (widthWindow > 1200) {
+if (widthWindow > 700) {
+  if (widthWindow < 1200) {
+    bagelTranslateY = 345
+    labelsScaleX = 0.8
+  }
+  if (widthWindow < 998) {
+    bagelTranslateY = 255
+    labelsScaleX = 0.64
+  }
+  if (widthWindow < 768) {
+    bagelTranslateY = 280
+    labelsScaleX = 0.64
+  }
+
   let elemBagelAnimate = document.querySelector('.hero__image-bagel_animate')
   let elemBagelFixed = document.querySelector('.hero__image-bagel_fixed')
 
@@ -87,7 +101,7 @@ if (widthWindow > 1200) {
         xPercent: 50,
       },
       {
-        scaleX: 1,
+        scaleX: labelsScaleX,
         xPercent: 0,
       }
     )
@@ -101,7 +115,7 @@ if (widthWindow > 1200) {
         xPercent: -50,
       },
       {
-        scaleX: 1,
+        scaleX: labelsScaleX,
         xPercent: 0,
       }
     )
@@ -301,6 +315,18 @@ gsap.to('.piece-products-9', {
   scale: 0.9,
   scrollTrigger: {
     trigger: '.piece-products-9',
+    start: 'top 80%',
+    end: 'top 0%',
+    scrub: 1,
+  },
+})
+
+gsap.to('.piece-presentation-1', {
+  y: -50,
+  ease: 'power1.out',
+  scale: 0.9,
+  scrollTrigger: {
+    trigger: '.piece-presentation-1',
     start: 'top 80%',
     end: 'top 0%',
     scrub: 1,

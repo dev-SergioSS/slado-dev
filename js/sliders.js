@@ -12,7 +12,7 @@ let processSlider = new Swiper('.process__slider', {
   allowTouchMove: false,
 
   breakpoints: {
-    576: {
+    998: {
       spaceBetween: 42,
     },
   },
@@ -94,7 +94,7 @@ clonedSlides.forEach(function (clone) {
 })
 
 let productSlider = new Swiper('.products__slider', {
-  spaceBetween: 40,
+  spaceBetween: 30,
   slidesPerView: 2.3,
   loop: true,
   centeredSlides: true,
@@ -110,12 +110,11 @@ let productSlider = new Swiper('.products__slider', {
   breakpoints: {
     480: {
       slidesPerView: 3,
+      spaceBetween: -10,
     },
-    720: {
-      slidesPerView: 3,
+
+    998: {
       spaceBetween: 60,
-    },
-    768: {
       allowTouchMove: false,
       slidesPerView: 6,
     },

@@ -71,7 +71,7 @@ document.addEventListener('scroll', (e) => {
 
 // -- secret slicky position
 
-if (windowWidth > 768) {
+if (windowWidth > 700) {
   const windowHeight =
     window.innerHeight ||
     document.documentElement.clientHeight ||
@@ -79,7 +79,7 @@ if (windowWidth > 768) {
 
   const secretText = document.querySelector('.secret__text')
   const secretTextHeight = secretText.offsetHeight
-  let secretPaddingY = (windowHeight - secretTextHeight) / 2
+  let secretPaddingY = (windowHeight - secretTextHeight) / 2 - 50
 
   if (secretPaddingY < 0) secretPaddingY = 100
 
