@@ -118,10 +118,6 @@ let productSlider = new Swiper('.products__slider', {
       allowTouchMove: false,
       slidesPerView: 6,
     },
-    1600: {
-      slidesPerView: 6,
-      spaceBetween: 100,
-    },
   },
 
   on: {
@@ -145,3 +141,13 @@ function setCurrentProduct(activeSlide) {
     productsPiece.classList.remove('animated')
   }, 400)
 }
+
+//  -- setSizeSliderNav
+const navSliderWrap = document.querySelector('.products__slider-nav')
+window.addEventListener('resize', () => setSizeSliderNav())
+
+function setSizeSliderNav() {
+  let bodyWidth = document.querySelector('.products').offsetWidth
+  navSliderWrap.style.width = bodyWidth + 'px'
+}
+setSizeSliderNav()
