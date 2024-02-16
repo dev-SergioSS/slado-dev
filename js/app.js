@@ -4,6 +4,12 @@ var windowWidth =
   document.documentElement.clientWidth ||
   document.body.clientWidth
 
+window.addEventListener('beforeunload', function () {
+  document.documentElement.style.scrollBehavior = 'auto'
+  document.documentElement.scrollTop = 0
+  document.documentElement.style.scrollBehavior = 'smooth'
+})
+
 // -- mobileMenu
 
 const btnMenu = document.querySelector('.header__btn-menu')
@@ -102,7 +108,6 @@ window.addEventListener('resize', () => {
     !partnersTextBlock.contains(partnersBenefits)
   ) {
     partnersTextBlock.appendChild(partnersBenefits)
-    console.log(1)
   }
 })
 

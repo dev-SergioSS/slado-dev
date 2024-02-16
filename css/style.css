@@ -704,9 +704,9 @@ main {
   background-position: center;
   -webkit-transform: scale(1);
           transform: scale(1);
-  transition: background-image 0.8s, -webkit-transform 0.4s;
-  transition: transform 0.4s, background-image 0.8s;
-  transition: transform 0.4s, background-image 0.8s, -webkit-transform 0.4s;
+  transition: background-image 0.6s, -webkit-transform 0.3s;
+  transition: transform 0.3s, background-image 0.6s;
+  transition: transform 0.3s, background-image 0.6s, -webkit-transform 0.3s;
 }
 
 .popup-products__pieces.animated {
@@ -845,12 +845,15 @@ main {
 }
 
 .product.swiper-slide-active ~ .product {
-  opacity: 0.2;
   left: 100px;
 }
 
 .product.swiper-slide-active ~ .swiper-slide-next {
   opacity: 0.5;
+}
+
+.product.swiper-slide-active ~ .swiper-slide-next + .product {
+  opacity: 0.2;
 }
 
 .product.swiper-slide-prev {
@@ -1296,11 +1299,6 @@ textarea {
           transform: scaleX(0);
 }
 
-.new-trend__label-1 {
-  -webkit-transform-origin: 100% center;
-          transform-origin: 100% center;
-}
-
 .new-trend__label-1 span {
   font-size: 28px;
 }
@@ -1314,8 +1312,6 @@ textarea {
 }
 
 .new-trend__label-2 {
-  -webkit-transform-origin: 0 center;
-          transform-origin: 0 center;
   padding-right: 100px;
 }
 
@@ -1489,7 +1485,7 @@ textarea {
 
 .presentation {
   background: url("../img/presentation/presentation-bg.png") center 0/cover no-repeat;
-  margin: 0 0 74px;
+  margin: 26px 0 74px;
   position: relative;
 }
 
@@ -1800,14 +1796,11 @@ textarea {
 .partners__benefits li p {
   font-size: 16px;
   max-width: 100px;
+  margin-top: auto;
 }
 
 .partners__benefits li:nth-child(2) {
   order: -1;
-}
-
-.partners__benefits li:nth-child(4) {
-  order: 1;
 }
 
 .order-box {
@@ -1846,6 +1839,7 @@ textarea {
   margin-left: -20px;
   width: calc(100% + 40px);
   margin-bottom: 18px;
+  z-index: 1;
 }
 
 .order-box__img img {
@@ -1863,6 +1857,8 @@ textarea {
 .order-box__btn {
   padding: 14px 20px;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .feedback {
@@ -1880,6 +1876,7 @@ textarea {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
 }
 
 .feedback #form-1 {
@@ -2313,7 +2310,7 @@ textarea {
 
 @media (min-width: 576px) {
   .presentation {
-    margin: 64px 0 118px;
+    margin: 155px 0 126px;
     background: none;
   }
 
@@ -2416,7 +2413,8 @@ textarea {
 
   .partners__benefits li p {
     max-width: none;
-    font-size: 18px;
+    font-size: 17px;
+    margin-top: 0;
   }
 }
 
@@ -2612,9 +2610,9 @@ textarea {
   }
 }
 
-@media (min-width: 1600px) {
-  .products__wrap {
-    max-width: 1500px;
+@media (min-width: 1500px) {
+  .product {
+    max-width: none;
   }
 }
 
@@ -2647,11 +2645,6 @@ textarea {
 
   .new-trend {
     gap: 180px;
-  }
-
-  .products__wrap {
-    max-width: 1800px;
-    padding-left: 220px;
   }
 
   .products__circle {
@@ -2727,6 +2720,22 @@ textarea {
 
   .piece-feedback-7 {
     display: none;
+  }
+
+  .piece-products-3 {
+    left: 345px;
+  }
+
+  .piece-products-4 {
+    left: 644px;
+  }
+
+  .piece-products-5 {
+    left: 670px;
+  }
+
+  .piece-products-7 {
+    left: 620px;
   }
 }
 
@@ -2943,7 +2952,7 @@ textarea {
   }
 
   .new-trend {
-    gap: 130px;
+    gap: 80px;
     top: -160px;
   }
 
@@ -3468,22 +3477,17 @@ textarea {
   }
 
   .new-trend {
-    gap: 100px;
+    gap: 0px;
     top: -166px;
+    top: -144px;
   }
 
   .new-trend__label {
     scale: 0.64;
   }
 
-  .new-trend__label-1 {
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-  }
-
   .new-trend__label-2 {
-    -webkit-transform-origin: 0 100%;
-            transform-origin: 0 100%;
+    margin-left: -60px;
   }
 
   .products {
@@ -3570,9 +3574,12 @@ textarea {
             transform: translateY(120px);
   }
 
-  .secret-and-pdf {
-    display: flex;
-    flex-direction: column-reverse;
+  .presentation {
+    margin-top: 76px;
+  }
+
+  .secret {
+    padding-top: 0;
   }
 
   .secret__wrap {
@@ -4355,15 +4362,10 @@ textarea {
     background-position: calc(100% + 100px) calc(100% - 200px);
   }
 
-  .feedback__title {
-    max-width: 500px;
-    font-size: 27px;
-    margin-bottom: 38px;
-  }
-
   .feedback__inputs {
     flex-direction: column;
     gap: 36px;
+    padding-right: 130px;
   }
 
   .feedback__form {
@@ -4375,7 +4377,6 @@ textarea {
   }
 
   .feedback__form input {
-    width: 158px;
     height: 25px;
   }
 
@@ -4527,6 +4528,15 @@ textarea {
     flex: 0 0 150px;
   }
 
+  .secret-and-pdf {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .secret {
+    margin-bottom: 0;
+  }
+
   .secret__text strong:nth-child(2) {
     max-width: 242px;
     text-transform: uppercase;
@@ -4648,6 +4658,22 @@ textarea {
 
   .piece-presentation-1 {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback__title {
+    max-width: 500px;
+    font-size: 27px;
+    margin-bottom: 38px;
+  }
+
+  .feedback__inputs {
+    padding-right: 0;
+  }
+
+  .feedback__form input {
+    width: 158px;
   }
 }
 

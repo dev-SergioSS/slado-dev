@@ -56,8 +56,10 @@ function setCurrentPopupProduct(activeSlide) {
   productsPieces.classList.add('animated')
   setTimeout(function () {
     productsPieces.classList.remove('animated')
-  }, 400)
+  }, 300)
 }
+
+// --linking buttons
 
 let btnPopupNext = document.querySelector('.popup-products__slider-btn-next')
 let btnPopupPrev = document.querySelector('.popup-products__slider-btn-prev')
@@ -117,6 +119,11 @@ let productSlider = new Swiper('.products__slider', {
       spaceBetween: 60,
       allowTouchMove: false,
       slidesPerView: 6,
+    },
+    1800: {
+      spaceBetween: 60,
+      allowTouchMove: false,
+      slidesPerView: 7,
     },
   },
 

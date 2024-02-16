@@ -90,6 +90,7 @@ if (widthWindow > 700) {
 
   window.addEventListener('scroll', myScrollHandler)
 
+  // -- newtrand label
   function animateLabels() {
     gsap.fromTo(
       '.new-trend__label-1',
