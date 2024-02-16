@@ -4365,7 +4365,7 @@ textarea {
   .feedback__inputs {
     flex-direction: column;
     gap: 36px;
-    padding-right: 130px;
+    padding-right: 150px;
   }
 
   .feedback__form {
